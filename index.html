@@ -28,15 +28,19 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
+	  <div class="image-container">
+        <img src="logo.jpg" class="img-fluid book-page" alt="Image 1">
+      </div><br>
       <div class="image-container">
-        <img src="page1.jpg" class="img-fluid book-page" alt="Image 1">
+        <img src="page1.png" class="img-fluid book-page" alt="Image 1">
       </div><br>
 	  <div class="image-container">
-        <img src="page2.jpg" class="img-fluid book-page" alt="Image 2">
+        <img src="page2.png" class="img-fluid book-page" alt="Image 2">
       </div><br>
 	  <div class="image-container">
           <footer id="location" style='color:grey;font-weiht:bold'>
 			<div id="map"></div>
+			<button id="openMapsBtn">Open in Maps</button>
 		</footer>
       </div>
     </div>
@@ -48,7 +52,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-U7U6dR5y5ooPO0iYsz5VfZxEK56G4C5LrZcF8eR5eE2Dsu8VWUc4qD8gTI3U7jrm" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-  var sabhaBhavana =[14.457455839672166, 74.43555815578841];
+  var sabhaBhavana =[14.440983, 74.438053];
 
   // Create the map centered on the Eiffel Tower
   var map = L.map('map').setView(sabhaBhavana, 15);
@@ -64,6 +68,20 @@
 
   // Add geocoding control
   L.Control.geocoder().addTo(map);
+  
+    // Add "Open in Maps" button functionality
+  document.getElementById('openMapsBtn').addEventListener('click', function() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        var url = 'geo:' + lat + ',' + lon + '?q=Eiffel+Tower,Paris';
+        window.location.href = url;
+      });
+    } else {
+      alert('Geolocation is not supported in your browser.');
+    }
+  });
 </script>
 <style>
   .image-container {
