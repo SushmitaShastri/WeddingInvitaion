@@ -28,15 +28,15 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
-	  <div class="image-container">
-        <img src="logo.png" class="img-fluid book-page" alt="Image 1">
-      </div><br>
       <div class="image-container">
         <img src="page1.png" class="img-fluid book-page" alt="Image 1">
       </div><br>
 	  <div class="image-container">
-        <h3>Celebrate with us!</h3>
-		<p>Time is rolling! Waiting to celebrate this special occasion in your presence!</p>
+        <img src="logo.png" class="img-fluid book-page" alt="Image 1">
+      </div><br>
+	  <div class="image-container">
+        <h3 style="margin:auto;width:fit-content;font-weight:revert">CELEBRATE WITH US</h3><br>
+		<p style="margin:auto;width:fit-content">Time is rolling! Waiting to celebrate this special occasion in your presence!</p><br>
 		<div class="container">
 		  <div class="card-deck">
 			<div class="card bg-dark">
@@ -67,12 +67,12 @@
 		</div>
       </div><br>
 	  <div class="image-container">
-          <footer id="location" style='color:grey;font-weiht:bold'>
-			<div>
-			  <span class="constant-tilt-shake btn btn-warning btn-block text-white" id="openMapsBtn">
+          <footer id="location" style='color:grey'>
+			<div style="margin:auto;font-weiht:bold;margin: auto;width: fit-content">
+			  <span class="btn btn-warning text-white" id="openMapsBtn">
 			  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-			  <b>Click on this button for location</b></span>
-			</div><br><br>
+			  <b style='font-size:small'>Click on this button for location</b></span>
+			</div>
 			<div id="map"></div>
 		</footer>
       </div>
@@ -167,32 +167,28 @@
     width: 100%;
   }
   body {
-      font-family: 'Times New Roman';
+      font-family:Garamond,serif;
       background: url('bg.jpg');
       background-size: contain;
       margin: 0;
       padding: 0;
-      color: #783535
+      color: #784f3e;
+	  font-size:large;
     }
    #map {
       height: 300px;
     }
-span.constant-tilt-shake {
-    animation: tilt-shaking 2s infinite; /* Adjust the total duration as needed */
-}
-
-@keyframes tilt-shaking {
-    0%, 100% { transform: rotate(0deg); }
-    8%, 25% { transform: rotate(5deg); }
-    17% { transform: rotate(0deg); }
-    33%, 50% { transform: rotate(-5deg); }
-    42% { transform: rotate(0deg); }
-    58%, 75% { transform: rotate(5deg); }
-    67% { transform: rotate(0deg); }
-}
-
-
-	
+	.card-text
+	{
+		font-weight:larger !important;
+		font-size:larger !important;
+		color:	#DAA520 !important
+	}
+	.btn-warning {
+    color: #784f3e !important;
+    background-color: #DAA520 !important;
+    border-color: #DAA520 !important;
+	}
 </style>
 
 </body>
